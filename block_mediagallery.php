@@ -22,8 +22,6 @@
  * @author     Adam Olley <adam.olley@netspot.com.au>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-require_once($CFG->dirroot.'/blocks/mediagallery/locallib.php');
-
 class block_mediagallery extends block_base {
     /**
      * Block initialization
@@ -40,7 +38,7 @@ class block_mediagallery extends block_base {
     public function get_content() {
         global $CFG, $DB, $OUTPUT;
 
-        if($this->content !== NULL) {
+        if ($this->content !== null) {
             return $this->content;
         }
 
@@ -49,7 +47,6 @@ class block_mediagallery extends block_base {
         $this->content = new stdClass();
         $this->content->text = '';
         $this->content->footer = '';
-
 
         $renderer = $this->page->get_renderer('block_mediagallery');
         $this->content->text = $renderer->basic_search_form();
